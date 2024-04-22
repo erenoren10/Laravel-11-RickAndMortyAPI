@@ -32,12 +32,30 @@ class GetRickAndMortyData extends Command
             $episodes = $this->rickAndMortyService->getEpisodes();
            
         
-            foreach ($characters as $characterData) {
+           foreach ($characters as $characterData) {
+                $character = [
+                    'id' => $characterData['id'],
+                    'name' => $characterData['name'],
+                    'status' => $characterData['status'],
+                    'species' => $characterData['species'],
+                    'type' => $characterData['type'] ?? null,
+                    'gender' => $characterData['gender'],
+                    'origin_name' => $characterData['origin']['name'] ?? null,
+                    'origin_url' => $characterData['origin']['url'] ?? null,
+                    'location_name' => $characterData['location']['name'] ?? null,
+                    'location_url' => $characterData['location']['url'] ?? null,
+                    'image' => $characterData['image'],
+                    'episode' => json_encode($characterData['episode']),
+                    'url' => $characterData['url'],
+                    'created' => $characterData['created'],
+                ];
+
                 Character::updateOrCreate(
                     ['id' => $characterData['id']], 
-                    $characterData 
+                    $character 
                 );
             }
+            
             $this->info('Karakterler Başarıyla Veri Tabanına Eklendi .');
             foreach ($locations as $locationData) {
                 Location::updateOrCreate(
