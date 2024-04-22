@@ -64,3 +64,21 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+# Rick and Morty API - Laravel Projesi
+
+Bu proje, PHP ve Laravel framework'ü kullanılarak Rick and Morty API'si için RESTful API yapısı oluşturmayı hedefler.
+
+## Kurulum
+
+1. Projeyi klonlayın: `git clone https://github.com/erenoren10/Laravel-11-RickAndMortyAPI`
+2. Gerekli bağımlılıkları yükleyin: `composer install`
+3. .env dosyasını oluşturun ve gerekli ayarları yapın: `cp .env.example .env`
+4. Veritabanını oluşturun: `php artisan migrate`
+5. API'yi başlatın: `php artisan serve`
+
+## Kullanım
+
+- Veri toplamak ve veri tabanına kaydetmek için CLI komutunu kullanın: `php artisan rickandmorty:getdata`
+- API'ye istek göndermek için: `GET /api/characters`, `GET /api/locations`, `GET /api/episodes` gibi endpoint'leri kullanabilirsiniz.
+- Daha spesifik bir İstek göndermek için (örneğin sadece istediğiniz id değerine istek göndermek için) :`GET /api/characters/{id}`, `GET /api/locations/{id}`, `GET /api/episodes/{id}` olarak da kullanabilirsiniz.
