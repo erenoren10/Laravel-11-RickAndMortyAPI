@@ -82,3 +82,9 @@ Bu proje, PHP ve Laravel framework'ü kullanılarak Rick and Morty API'si için 
 - Veri toplamak ve veri tabanına kaydetmek için CLI komutunu kullanın: `php artisan rickandmorty:getdata`
 - API'ye istek göndermek için: `GET /api/characters`, `GET /api/locations`, `GET /api/episodes` gibi endpoint'leri kullanabilirsiniz.
 - Daha spesifik bir İstek göndermek için (örneğin sadece istediğiniz id değerine istek göndermek için) :`GET /api/characters/{id}`, `GET /api/locations/{id}`, `GET /api/episodes/{id}` olarak da kullanabilirsiniz.
+
+## Ekstralar
+
+- İstekleri Postman üzerinde denemek için : [RickAndMortyAPI.postman_collection.json](https://github.com/erenoren10/Laravel-11-RickAndMortyAPI/files/15063419/RickAndMortyAPI.postman_collection.json)
+- Unit Tests: `phpunit` ile testleri çalıştırabilirsiniz.
+
