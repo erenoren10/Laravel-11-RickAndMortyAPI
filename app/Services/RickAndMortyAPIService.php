@@ -34,36 +34,36 @@ class RickAndMortyAPIService
     }
     public function getEpisodes()
     {
-        $allCharacters = [];
+        $allEpisodes = [];
     
         $nextPage = 'episode'; 
         while ($nextPage) {
             $response = $this->client->request('GET', $nextPage);
             $data = json_decode($response->getBody()->getContents(), true);
             
-            $allCharacters = array_merge($allCharacters, $data['results']); 
+            $allEpisodes = array_merge($allEpisodes, $data['results']); 
             
             $nextPage = $data['info']['next'];
         }
     
-        return $allCharacters;
+        return $allEpisodes;
     }
     
     public function getLocation()
     {
-        $allCharacters = [];
+        $allLocations = [];
     
         $nextPage = 'location'; 
         while ($nextPage) {
             $response = $this->client->request('GET', $nextPage);
             $data = json_decode($response->getBody()->getContents(), true);
             
-            $allCharacters = array_merge($allCharacters, $data['results']); 
+            $allLocations = array_merge($allLocations, $data['results']); 
             
             $nextPage = $data['info']['next'];
         }
     
-        return $allCharacters;
+        return $allLocations;
     }
 
 }
