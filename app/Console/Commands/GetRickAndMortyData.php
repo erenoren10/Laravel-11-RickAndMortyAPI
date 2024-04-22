@@ -38,21 +38,23 @@ class GetRickAndMortyData extends Command
                     $characterData 
                 );
             }
+            $this->info('Karakterler Başarıyla Veri Tabanına Eklendi .');
             foreach ($locations as $locationData) {
                 Location::updateOrCreate(
                     ['id' => $locationData['id']], 
                     $locationData 
                 );
             }
-            
+            $this->info('Lokasyonlar Başarıyla Veri Tabanına Eklendi .');
+
             foreach ($episodes as $episodeData) {
                 Episode::updateOrCreate(
                     ['id' => $episodeData['id']], 
                     $episodeData 
                 );
             }
-            
-            $this->info('Veriler Başarıyla Veri Tabanına Eklendi .');
+            $this->info('Bölümler Başarıyla Veri Tabanına Eklendi .');
+            $this->info('Bütün Veriler Başarıyla Veri Tabanına Eklendi .');
         } catch (GuzzleException $e) {
             $this->error('Veriler Eklenirken Bir Hata Oluştu: ' . $e->getMessage());
         }
